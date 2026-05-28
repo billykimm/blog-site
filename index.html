@@ -1,178 +1,262 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+<title>blindjul</title>
+
+<meta property="og:title" content="Blindjul" />
+    <meta property="og:description" content="No im not blind stop asking" />
+    <meta property="og:image" content="https://blog.plixoo.online/blends.gif" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#8be9ff">
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blindjul</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
 <link rel="stylesheet" href="https://unpkg.com/7.css">
+
 <style>
-:root {
-    --home-height: 530px;
-    --name-size: 72px;
-    --text-size: 20px;
+
+body{
+    margin:0;
+    background:url("fishy.jpg");
+    font-family:Segoe UI;
+    overflow-x:hidden;
 }
-body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: "Segoe UI", sans-serif;
-    background: url('fishy.jpg') repeat;
-    overflow-x: hidden;
+
+.main{
+    width:95%;
+    max-width:1000px;
+    margin:auto;
+    margin-top:25px;
 }
-.wrapper {
-    width: 1000px;
-    max-width: 95%;
-    margin: 30px auto;
+
+.holder{
+    display:grid;
+    grid-template-columns:1fr 320px;
+    gap:18px;
 }
-.hero {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 20px;
-    align-items: start;
+
+.side{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
 }
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+
+.window{
+    overflow:hidden;
 }
-.window {
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
+
+.home{
+    min-height:520px;
 }
-.home-window {
-    min-height: var(--home-height);
+
+.text{
+    padding:20px;
+    line-height:1.7;
+    font-size:20px;
 }
-.home-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    box-sizing: border-box;
+
+.pfp{
+    width:100%;
+    display:block;
+    border-radius:7px;
 }
-.logo {
-    margin: 0;
-    font-size: var(--name-size);
-    font-weight: bold;
-    color: #ebfcff;
-    text-shadow: 0 0 8px #8be9ff, 0 0 14px #8be9ff;
+
+.box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:7px;
+    padding:8px;
+    border-radius:6px;
+    background:rgba(255,255,255,.08);
 }
-.sub {
-    margin: 0px;
-    font-size: var(--text-size);
-    line-height: 1.7;
-    opacity: 0.95;
+
+.box img{
+    width:20px;
+    height:20px;
 }
-.profile-pic {
-    width: 100%;
-    border-radius: 8px;
-    display: block;
+
+.stats{
+    font-size:16px;
+    margin:4px 0;
 }
-.game {
-    display: flex;
-    align-items: center;
-    padding: 8px;
-    margin-top: 6px;
-    border-radius: 6px;
-    background: rgba(255,255,255,0.08);
+
+.bottom{
+    text-align:center;
+    color:white;
+    opacity:.8;
+    margin-top:18px;
+    font-size:14px;
 }
-.game img {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-}
-.footer {
-    margin-top: 20px;
-    text-align: center;
-    color: white;
-    opacity: 0.8;
-    font-size: 14px;
-}
-.stats-text {
-    font-size: 16px;
-    margin: 5px 0;
-}
-@media (max-width: 800px) {
-    .hero {
-        grid-template-columns: 1fr;
+
+@media(max-width:800px){
+
+    .holder{
+        grid-template-columns:1fr;
     }
-    .logo {
-        font-size: 52px;
-    }
+
 }
+
 </style>
 </head>
+
 <body>
-<div class="wrapper">
-    <div class="hero">
-        <div class="window active home-window">
-            <div class="title-bar">
-                <div class="title-bar-text">Home</div>
-            </div>
-            <div class="window-body home-content">
-                <p class="sub">
-                    Hii, im Blindjul.<br><br>
-                    i made this website to bridge some of my accounts together and mostly just for fun :o<br><br>
-                    i really like dark souls aswell as fallout, making useless apps and websites is my thing, i MIGHT add a blog to the site, but im not the best programmer<br><br>
-                    well thanks for reading.
-                </p>
-            </div>
-        </div>
-        <div class="sidebar">
-            <div class="window active">
-                <div class="title-bar">
-                    <div class="title-bar-text">About me</div>
-                </div>
-                <div class="window-body">
-                    <img src="https://i.imgur.com/u6ROwvK.jpeg" class="profile-pic"><br>
-                    <b>Favorite Games</b>
-                    <div class="game"><img src="HUH.png">Fallout Series</div>
-                    <div class="game"><img src="HUH.png">Dark Souls</div><br>
-                    <b>Main Interests</b>
-                    <div class="game"><img src="HUH.png">Web Design</div>
-                    <div class="game"><img src="HUH.png">App Design</div>
-                </div>
-            </div>
-            <div class="window active">
-                <div class="title-bar">
-                    <div class="title-bar-text">Terminal Status</div>
-                </div>
-                <div class="window-body">
-                    <p class="stats-text">Total Visitors: <span id="total-views">Connecting...</span></p>
-                    <p class="stats-text">Users Online: <span id="active-users">Connecting...</span></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer">no im not blind stop asking</div>
+
+<div class="main">
+
+<div class="holder">
+
+<div class="window active home">
+
+<div class="title-bar">
+<div class="title-bar-text">
+home
+</div>
+</div>
+
+<div class="window-body text">
+
+Hii im Blindjul
+<br><br>
+
+made this mostly just because i was bored and wanted somewhere to dump random stuff
+<br><br>
+
+i like fallout and dark souls alot, i also spend way too much time making random useless apps and websites
+<br><br>
+
+might add more stuff later idk
+
+</div>
+</div>
+
+<div class="side">
+
+<div class="window active">
+
+<div class="title-bar">
+<div class="title-bar-text">
+about me
+</div>
+</div>
+
+<div class="window-body">
+
+<img src="https://i.imgur.com/u6ROwvK.jpeg" class="pfp">
+
+<br>
+
+<b>favorite games</b>
+
+<div class="box">
+<img src="HUH.png">
+fallout series
+</div>
+
+<div class="box">
+<img src="HUH.png">
+dark souls
+</div>
+
+<br>
+
+<b>main interests</b>
+
+<div class="box">
+<img src="HUH.png">
+web design
+</div>
+
+<div class="box">
+<img src="HUH.png">
+app stuff
+</div>
+
+</div>
+</div>
+
+<div class="window active">
+
+<div class="title-bar">
+<div class="title-bar-text">
+terminal status
+</div>
+</div>
+
+<div class="window-body">
+
+<p class="stats">
+Total Visitors:
+<span id="total-views">...</span>
+</p>
+
+<p class="stats">
+Users Online:
+<span id="active-users">...</span>
+</p>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="bottom">
+no im not blind bro
+</div>
+
 </div>
 
 <script>
-    const sessionId = Math.random().toString(36).substring(2, 15);
-    let isNewVisit = true;
 
-    async function updateStats() {
-        try {
-            const response = await fetch('https://stunning-garbanzo-tan.vercel.app/api/stats', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ session_id: sessionId, is_new: isNewVisit })
-            });
-            const data = await response.json();
-            document.getElementById('total-views').innerText = data.total_views;
-            document.getElementById('active-users').innerText = data.active_users;
-            isNewVisit = false;
-        } catch (e) {}
+let sid=Math.random().toString(36).slice(2)
+
+let first=true
+
+async function loadStuff(){
+
+    try{
+
+        let r=await fetch("https://stunning-garbanzo-tan.vercel.app/api/stats",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                session_id:sid,
+                is_new:first
+            })
+        })
+
+        let d=await r.json()
+
+        document.getElementById("total-views").innerText=d.total_views
+        document.getElementById("active-users").innerText=d.active_users
+
+        first=false
+
+    }catch{}
+
+}
+
+loadStuff()
+
+setInterval(loadStuff,5000)
+
+document.addEventListener("keydown",e=>{
+
+    if((e.ctrlKey||e.metaKey)&&(e.key=="s"||e.key=="S")){
+
+        e.preventDefault()
+
     }
 
-    updateStats();
-    setInterval(updateStats, 5000);
+})
 
-    document.addEventListener('keydown', function(e) {
-        if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) {
-            e.preventDefault();
-            alert("Saving this webpage is disabled!");
-        }
-    });
 </script>
+
 </body>
 </html>
+
